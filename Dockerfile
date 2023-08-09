@@ -43,7 +43,7 @@ RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o wechatbot
 
 # 下面是第二阶段的镜像构建，和之前保持一致
-FROM alpine:latest
+FROM alpine:3.18.3
 
 # 更新安装源
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
